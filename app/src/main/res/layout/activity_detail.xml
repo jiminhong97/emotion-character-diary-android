@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ★ FrameLayout 중첩 활용 : ImageView 두 개를 겹쳐 배치하여 추후 페이드인/아웃 애니메이션을 적용할 수 있는 기반을 마련했습니다 -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/detailBackgroundContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 배경 이미지 (현재 배경) -->
+    <ImageView
+        android:id="@+id/bgCurrent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_default" />
+
+    <!-- 배경 이미지 (다음 배경)-->
+    <ImageView
+        android:id="@+id/bgNext"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:alpha="0" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- 오늘 날짜 + 제목 -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="오늘의 감정씨"
+                android:textSize="20sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2025-11-30"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- 감정씨 캐릭터 -->
+            <ImageView
+                android:id="@+id/imgCharacter"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:scaleType="fitCenter" />
+
+            <!-- 감정 요약 텍스트 -->
+            <TextView
+                android:id="@+id/tvMoodSummary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="오늘 감정 : 행복"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- 에너지(별점) 표시 -->
+            <RatingBar
+                android:id="@+id/ratingDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:stepSize="1"
+                android:isIndicator="true" />
+
+            <TextView
+                android:id="@+id/tvEnergyLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="오늘의 에너지"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- 감정씨의 한마디 -->
+            <TextView
+                android:id="@+id/tvMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="오늘 감정씨는 햇살처럼 반짝이고 있어요 ☀"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_marginBottom="24dp" />
+
+            <!-- 사용자가 남긴 한 줄 기록 -->
+            <TextView
+                android:id="@+id/tvUserNote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="오늘의 한 마디 💬&#10;여기에 사용자가 쓴 문장이 표시됩니다."
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_marginBottom="32dp"
+                android:padding="8dp" />
+
+            <!-- 버튼 -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btnToHome"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="홈으로" />
+
+                <Button
+                    android:id="@+id/btnToHistory"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:text="히스토리" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
