@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- ★ ViewFlipper 내부에 다른 레이아웃 사용
+    : ViewFlipper의 한 페이지에 ImageView와 Button을 동시에 배치하기 위해, 중첩 레이아웃인 RelativeLayout을 활용했습니다. -->
+    <ViewFlipper
+        android:id="@+id/guideFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- PAGE 1: 첫 번째 가이드 이미지 -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/guide_page_1" />
+
+        <!-- PAGE 2: 두 번째 가이드 이미지 + "홈으로 돌아가기" 버튼 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/guide_page_2" />
+
+            <Button
+                android:id="@+id/btnGuideHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="40dp"
+                android:text="홈으로 돌아가기" />
+
+        </RelativeLayout>
+
+    </ViewFlipper>
+
+</LinearLayout>
