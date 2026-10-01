@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 달력 -->
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp" />
+
+    <!-- 날짜 표시 -->
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="날짜를 선택해주세요"
+        android:textSize="18sp"
+        android:layout_marginBottom="20dp" />
+
+    <!-- 감정 아이콘 표시 -->
+    <ImageView
+        android:id="@+id/imgResult"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="gone"
+        android:src="@drawable/emotion_happy" />
+
+    <!-- 감정 텍스트 -->
+    <TextView
+        android:id="@+id/tvResultMood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+    <!-- 에너지 텍스트 -->
+    <TextView
+        android:id="@+id/tvResultEnergy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvResultNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:visibility="gone"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"/>
+
+    <!-- "홈으로 돌아가기" 버튼 -->
+    <Button
+        android:id="@+id/btnToHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="홈으로 돌아가기"
+        android:textAllCaps="false"
+        android:layout_marginTop="12dp"/>
+
+</LinearLayout>
