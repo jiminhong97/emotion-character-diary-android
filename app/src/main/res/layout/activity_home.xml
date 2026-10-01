@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rootLayout"
+    android:background="@drawable/bg_default">
+
+    <!-- 앱 로고 -->
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="32dp"
+        android:src="@drawable/emotion_logo"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter" />
+
+    <!-- 가이드 버튼 + ★ 투명한 배경의 ImageButton 활용-->
+    <ImageButton
+        android:id="@+id/btnGuide"
+        android:layout_width="182dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="32dp"
+        android:background="@android:color/transparent"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_guide"
+        android:contentDescription="사용법 보기" />
+
+    <!-- "기록할래요!" & "히스토리" 버튼 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="368dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <ImageButton
+            android:id="@+id/btnRecord"
+            android:layout_width="0dp"
+            android:layout_height="260dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="오늘 감정 기록하기"
+            android:scaleType="fitCenter"
+            android:src="@drawable/btn_record" />
+
+        <ImageButton
+            android:id="@+id/btnHistory"
+            android:layout_width="0dp"
+            android:layout_height="260dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="히스토리 보기"
+            android:scaleType="fitCenter"
+            android:src="@drawable/btn_history" />
+    </LinearLayout>
+
+    <!-- 화면 하단 랜덤 힐링 문구 -->
+    <TextView
+        android:id="@+id/tvDailyMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="감정씨가 준비 중..."
+        android:textSize="16sp"
+        android:textColor="#444444"
+        android:gravity="center"
+        android:layout_marginBottom="24dp" />
+
+</LinearLayout>
